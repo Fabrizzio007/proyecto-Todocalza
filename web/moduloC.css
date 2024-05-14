@@ -1,0 +1,133 @@
+th{
+    border: solid 1px; 
+}
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #add8e6;
+    padding: 10px;
+    list-style: none;
+  }
+  
+  .nav-list a {
+    color: #333;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .nav-list a:hover {
+    background-color: #ccc;
+  }
+
+.text{
+    background-color: aliceblue;
+    width: 300px;
+    height: 20px;         /*esto da formato a las tablas*/
+    display: inline;
+    margin: 5px;
+    padding: 10px;
+        
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;/*esto elimina el espacio entre celdas*/
+
+}
+
+th, td{
+    border:solid 4px #eee; /* esto da color y borde a la tblas de cabecera y contenido*/
+}
+th{
+    background-color: red;/*esto da color a la tabla o padding*/
+    padding: 16px;
+    color: white; /*esto da color a la letra*/
+}
+tr :hover{ /*aca selecciono las filas para darle color al pasar por ensima de ellas */
+background-color: rgb(125, 125, 159);
+cursor: pointer; /*esto pone una mano al pasar por esima de las listas*/
+}
+tr:nth-child(even){/* esto da color a las celdas en donde even es inpar y ood es par*/
+background-color: #eee;
+}
+ .counter{
+    counter-increment: calc();
+ }
+
+body {  /* Estilos generales para reiniciar valores*/
+    font-family: 'Protest Riot', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.fondo { /* Estilos para el encabezado */
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+#link {
+    font-size: 2.5rem;
+    color: #ff6600;
+}
+#link:hover{
+    color: rgb(21, 248, 66);
+}
+
+
+.compra { /* Estilos para el botón "REALIZAR COMPRA" */
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #333;
+}
+
+.text {  /* Estilos para los campos de entrada */
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.text:focus { /* da estilo a la casilla de datos */
+    outline: none;
+    border-color: #ff6600;
+    box-shadow: 0 0 5px rgba(255, 102, 0, 0.5);
+}
+
+        
+#pagar { /* Estilos para el contenedor del botón */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+            
+}
+
+        
+#pagar input[type="submit"] { /* Estilos para el botón */
+    display: block;
+    width: 200px;
+    padding: 10px; /*tamaño del color*/
+    font-size: 16px;
+    background-color: #007bff; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+     border: none;
+    border-radius: 5px;
+    margin: 20px auto; /* Margen automático para centrar horizontalmente */
+}
+
+#pagar:hover{
+    background-color: aquamarine;
+}
+#button:hover{
+    cursor: pointer;
+}
+

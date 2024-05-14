@@ -1,0 +1,277 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(img/fondo\ ñ.jpg);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5); /* agrega efectos de sombra al cuadro */
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(37, 146, 163);
+    padding: 20px; /*tamaño de cuadro*/
+
+}
+
+.logo{
+    color: black;  /*color y tamaño de sombras*/
+    text-shadow: 3px 3px 3px rgb(220, 211, 211);
+    padding: 15px 15px rgba(186, 19, 19, 0.867);
+}
+.navegacion h1{
+    font-size: 4rem;
+}
+ .listas{
+    display: inline-block;
+    color: #fff;     /*color logos*/
+    transition: 1s ease;
+ }
+
+ .listas a{
+   font-size: 1rem; /*tamañol letra*/
+   color: aliceblue; /*color letras logos*/
+   text-decoration: none ;
+   margin-left: 10px; /*distamcia de titulos*/
+   transition: 1s ease;
+ }
+
+.listas a input{
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 100px;
+}
+ .listas:hover{
+    color: black;
+ }
+
+ .listas a:hover{
+    color: black;
+ }
+
+
+
+
+.text{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    height: 70px;
+    margin: 80px 0px  ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(235, 24, 24, 0.838);
+}
+
+.arr{
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 24px;
+    margin-left: 2px;
+    transition: 2s ease;;
+    margin: 0;
+    
+}
+
+.container li{
+    text-align: center;
+    display: inline-block;
+    color: white;     /*color logos*/
+    transition: 1s ease;
+    padding: 50px;
+ }
+
+ .arr:hover{
+    color: rgb(17, 12, 15);  /* con transformate: scalate: 1.2 se da el efecto zoom*/
+ }
+
+ .container1{
+    width: 1473px;
+    height: 180px;
+    display: flex ;
+    align-items: center;;
+    justify-content: center;
+    background-image: url(img/stand.jpg) ;
+    background-size: cover;
+    background-position: center ;
+ }
+
+ .container1 p{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(15, 12, 12);
+    font-size: 2.5rem;
+    opacity: 50.5;
+    
+ }
+ .container1 p:hover{
+    color: rgb(84, 118, 180);
+ }
+ .container1 p{
+    text-align: justify;
+    color: rgb(90, 66, 145);
+    text-shadow: 25px 25px 25px black;
+    padding: 15px 15px rgba(186, 19, 19, 0.867);
+}
+
+
+button{
+    border: 0;
+    background-image: linear-gradient(150deg #9500ff, #03f, #00ddff); /*imagen de fondo*/
+    border-radius: 8px; /*redondea el boton*/
+    color: white;  
+    display: flex;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+    transition: 3s;
+
+}
+
+button span{
+    background-color: #111; /*fondo 2*/
+    padding: 16px 24px; /*segundo paddin*/
+    border-radius: 6px; /*redondea la caja interior*/
+    transition: 3s; 
+
+}
+button :hover span{  /*cuando el puntero esta arriba del boton quita el fondo*/
+    background: none;
+}
+
+button :active{
+    transform: scale(0.9);/**/
+}
+
+.container2{
+    width: 1473px; /*ancho de imagen*/
+    height: 290px; /*alto de imagen*/
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0,0,0, 3.5), (0,0,0, 3.5);
+    background: url(img/oferta\ mujer.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container2 p{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(190, 43, 43);
+    font-size: 2.5rem;
+}
+.container2 p:hover{
+    color: rgb(187, 177, 38);
+}
+
+.container2 p{
+    text-align: justify;
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.878);
+    text-shadow: 25px 25px 25px rgb(24, 18, 18);
+    padding: 15px 15px rgba(186, 19, 19, 0.867);
+}
+
+button{
+    border: 0;
+    background-image: linear-gradient(150deg #9500ff, #03f, #00ddff); /*imagen de fondo*/
+    border-radius: 8px ; /*redondea el boton*/
+    color: white;  
+    display: flex;
+    font-size: 18px;
+    padding: 8px;
+    cursor: pointer;
+    transition: 3s;
+
+}
+
+button span{
+    background-color: #5f6498; /*fondo 2*/
+    padding: 10px 17px; /*segundo paddin*/
+    border-radius: 6px; /*redondea la caja interior*/
+    transition: 1s; 
+
+}
+button {
+    background-color: #007bff; /*  color inicial*/
+    animation: colorChange 2s infinite; /* animacion */
+  }
+  
+  @keyframes colorChange {
+    0% { background-color: #0b4380; } /* color inicial*/
+    50% { background-color: #03f; } /* nuevo color de animacion al 50% */
+    100% { background-color: #007bff; } /* volver al color inicial */
+  }
+
+.filtro{
+    text-align: left;
+    font-size: 2rem;
+    color: rgb(20, 15, 15);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 7px 10px rgba(186, 19, 19, 0.867);
+}
+.filtro:hover{
+    color: rgb(13, 249, 72)
+}
+
+.compra{
+  background-color: red;
+  height: 120px;
+  width: 100px;
+  align-items: center;
+  text-align: center;
+  margin: 500px;
+    font-size: 2.5rem;
+}
+
+.compra{
+    background-color: red; /*fondo 2*/
+    padding: 10px 17px; /*segundo paddin*/
+    border-radius: 15px  15px; /*redondea la caja interior*/
+    transition: 0.5s; 
+
+}
+.compra:hover{
+    color: white;
+}
+
+.ayuda span{
+   font-size: 50px;
+}
+
+.container3{
+    padding: 180px 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-size: cover;
+}
+
+
+button img{
+    background-color: #151b18; /*fondo 2*/
+    padding: 10px 17px; /*segundo paddin*/
+    border-radius: 2px ; /*redondea la caja interior*/
+    transition: 0.5s; 
+}
+  
+.btn :hover{
+    background-color: #03f;
+}

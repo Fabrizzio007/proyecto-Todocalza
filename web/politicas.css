@@ -1,0 +1,54 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(img2/politicas.jpg);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7388e7;
+    padding: 10px;
+    list-style: none;
+  }
+  
+  .nav-list a {
+    color: #080606;
+    text-decoration: none;
+    padding: 5px;
+  }
+  
+  .nav-list a:hover {
+    background-color: #ccc;
+  }
+  
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Agregado para incluir el padding en el ancho máximo */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #000000;
+}
+
+p, ul {
+    color: #141414;
+    line-height: 1.6;
+    max-width: 800px; /* Ajusta el ancho máximo según tus preferencias */
+    margin: 0 auto; /* Centra el texto horizontalmente */
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+

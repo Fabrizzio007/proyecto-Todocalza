@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.modulopagostodocalza.com</title>
+    <link rel="stylesheet" href="moduloC.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <span class="fondo">almacenes todocalza, visitanos y lleva siempre lo mejor para tu familia 
+        <a id="link" target="_blank" href="productos.html">pincha aqui !</a>
+    </span>
+    <nav>
+        <ul class="nav-list">
+          <li><a href="../todocalza.html">Inicio</a></li>
+          <li><a href="productos.html">catalogo</a></li>
+          <li><a href="moduloC.html">carrito</a></li>
+          <li><a href="contactos.html">Contactanos</a></li>
+        </ul>
+      </nav>
+
+    <div class="compra">REALIZAR COMPRA</div>
+     
+    
+    
+        <form  action="/formulario.php" method="get">  <!--action es para ingresar la ruta de envio del formulario method elige la forma de enviar que puede ser con get o post-->
+            <!--con form es para recopilar info del usuario-->
+            <labe>nombres cliente:</labe>
+           <input  class="text" name="nombre" placeholder="ejemplo:juan carlos medina"/> <!--crea una casilla para solicitar info, el auxiliar nombre indica que el valor ingresado en nombre es valor a interpetrar-->
+           <!-- placeholder es para que el cuadro indique que se debe introducir-->
+           <!--en input tambien se puede poner de primero la propiedad type="sumit,email,passwor,radio,checkbox,file"-->
+            <br>
+            <labe>email:</labe>
+            <input class="text" name="email:" placeholder="ejemplo: juanmedina@gamil.com"/>
+            <br>
+            <labe>telefono</labe>
+            <input class="text" name="telefono:" placeholder="ejemplo: 3023507085"/>
+            
+        </form>
+        <form action="/procesar_pago" method="post">
+           
+            <label for="medio_pago">Medio de Pago:</label>
+            <select class="pago" id="medio_pago" name="medio_pago" required>
+                <option value="paypal">PayPal</option>
+                <option value="psp">PSP</option>
+                <option value="tarjeta_credito">Tarjeta de Crédito</option>
+                <option value="tarjeta_debito">Tarjeta de Débito</option>
+            </select>
+            <br>
+            <label for="tipo_banco">Tipo de Banco:</label>
+            <select class="pago" id="tipo_banco" name="tipo_banco" required>
+                <option value="no aplica">no aplica</option>
+                <option value="davivienda">Davivienda</option>
+                <option value="bbva">BBVA</option>
+                <option value="bancolombia">Bancolombia</option>
+            </select>
+            <br>
+        </form>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio Unitario (COP)</th>
+                    <th>Cantidad</th>
+                    <th>Valor Total (COP)</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <select id="frutas" onchange="actualizarPrecio()">
+                            <option value="zapato_caballero">Zapato Caballero</option>
+                            <option value="tenis_caballero">Tenis Caballero</option>
+                            <option value="zapatos_dama">Zapatos Dama</option>       <!--opciones de boton-->
+                            <option value="tennis_dama">Tennis Dama</option>
+                            <option value="zapatos_ninos">Zapatos Niños</option>
+                            <option value="tenis_ninos">Tenis Niños</option>
+                        </select>
+                    </td>
+                    <td id="precioUnitario">150,000 COP</td>
+                    <td><input type="number" id="cantidad" value="0" oninput="actualizarSubtotal(this.value)"></td>
+                    <td id="valorTotal">0.00 COP</td>
+                    <td><button onclick="reiniciarContadores(this)">Reiniciar</button></td>     <!--reinicia el contador al cambiar de articulo-->
+                </tr>
+            </tbody>
+        </table>
+        
+        <table>
+            <tr>
+                <td>Compra sin IVA</td>
+                <td id="compraSinIVA">0.00 COP</td>
+            </tr>
+            <tr>
+                <td>IVA 16%</td>
+                <td id="iva16">0.00 COP</td>
+            </tr>
+            <tr>
+                <td>Valor Total de Compra</td>
+                <td id="valorTotalCompra">0.00 COP</td>
+            </tr>
+        </table>
+        
+        <script>
+            let precioUnitario = {      <!--para las funciones de valor-->
+                zapato_caballero: 150_000,
+                tenis_caballero: 180_000,            
+                zapatos_dama: 140_000,
+                tennis_dama: 170_000,
+                zapatos_ninos: 115_000,
+                tenis_ninos: 155_000
+            };
+        
+            function actualizarSubtotal(cantidad) {     
+                const opcionSeleccionada = document.getElementById("zapatos").value;
+                const subtotal = precioUnitario[opcionSeleccionada] * cantidad;
+                document.getElementById("valorTotal").textContent = subtotal.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+                actualizarCompraSinIVA(subtotal);
+            }
+        
+            function reiniciarContadores(button) {
+                const row = button.parentNode.parentNode;
+                const cantidadInput = row.querySelector("input[type='number']");
+                const opcionSeleccionada = document.getElementById("zapatos").value;
+                cantidadInput.value = 0;
+                actualizarSubtotal(0);
+            }
+        
+            function actualizarCompraSinIVA(subtotal) {
+                const iva = subtotal * 0.16;
+                const compraSinIVA = subtotal - iva;
+                document.getElementById("compraSinIVA").textContent = compraSinIVA.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+                document.getElementById("iva16").textContent = iva.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+                const valorTotalCompra = subtotal;
+                document.getElementById("valorTotalCompra").textContent = valorTotalCompra.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+            }
+        
+            function actualizarPrecio() {
+                const select = document.getElementById("zapatos");
+                const opcionSeleccionada = select.value;
+                document.getElementById("precioUnitario").textContent = precioUnitario[opcionSeleccionada].toLocaleString("es-CO", { style: "currency", currency: "COP" });
+                actualizarSubtotal(document.getElementById("cantidad").value);
+            }
+        </script>
+        <button onclick="mostrarhistorial()"mostrar histotial de pagos></button>
+        <button onclick="mostrarHistorial()">Mostrar Historial de Pagos</button>
+
+       <script>
+            function mostrarHistorial() {
+                
+            }
+        </script>
+        
+
+        <form id="pagar">
+            <input id="button" type="submit" value="Realizar Pago">
+        </form>
+        
+</body>
+</html>
